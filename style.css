@@ -1,8 +1,316 @@
 .page-accueil {
-    background-image: url("images/background.png");  /* chemin vers ton image */
-    background-size: cover;                    /* couvre tout l'écran */
-    background-repeat: no-repeat;              /* pas de répétition */
-    background-position: center;               /* bien centrée */
-    min-height: 100vh;                         /* prend toute la hauteur visible */
-    margin: 0;
+    background-image: url("image/background.png");
+    /* chemin vers ton image */
+    background-size: 100% auto; 
+    /* couvre tout l'écran */
+    background-repeat: no-repeat;
+    /* pas de répétition */
+    background-position: top center;
+    /* bien centrée */
+    min-height: 1000vh;
+
+
+    font-family: "Bungee Spice", sans-serif;
+    font-style: normal;
+}
+
+
+
+
+/*--------------------------------------*/
+/*---------- MENU NAVBAR ---------------*/
+/*--------------------------------------*/
+.menu-open-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-style: bold;
+  }
+
+
+
+/* Style des liens de la navbar */
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Ajouter un trait flou entre les éléments de la navbar principale (pas dans le menu déroulant) */
+.navbar ul li:not(.dropdown):not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -5px;  /* Positionne le trait sur le côté droit des éléments */
+  top: 5px;
+  height: 30px;  /* Taille du trait */
+  width: 1px;  /* Largeur du trait */
+  background-color: rgba(64, 64, 64, 0.2);  /* Couleur du trait */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);  /* Flou et ombre */
+}
+
+
+
+
+
+
+/* Effet hover sur le menu déroulant */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: relative;
+    /* Afficher le menu au survol */
+    text-align: center;
+    /* Centre le texte du menu */
+
+}
+
+/* Cachez le menu déroulant au départ */
+.dropdown-menu {
+    display: none;
+    /* Assurez-vous que le menu est caché par défaut */
+    background-color: none;
+    /* Fond gris clair */
+    border-radius: 5px;
+    /* Coins arrondis */
+    padding: 5px 0;
+    /* Réduit la taille du menu */
+    font-size: 14px;
+    /* Réduit la taille du texte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+/* Affichage au hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  border-radius: 5px;
+  left: 3px;
+  /* Coins arrondis */
+}
+
+/* Styliser les éléments du menu déroulant */
+.dropdown-item {
+    padding: 8px 30px;
+    /* Espacement autour du texte */
+    font-size: 13px;
+    /* Réduit la taille du texte dans les éléments */
+}
+
+.dropdown-item:hover {
+  background-color: #b9b3f8 !important;
+}
+
+  .dropdown-item:active {
+    background: linear-gradient(135deg, #b9b3f8, #d2a4f5);
+  }
+
+/* Positionnement du texte dans les nav-items */
+.nav-item {
+    position: relative;
+    /* Nécessaire pour positionner l'image au-dessus sans affecter le texte */
+    padding-left: 10px;
+    /* Espacement pour que l'image ne soit pas collée au texte */
+}
+
+/* Effet de survol sur les éléments du menu */
+.nav-item:hover .nav-link {
+    border-radius: 5px;
+    /* Coins arrondis */
+}
+
+
+/* Optionnel : amélioration de l'apparence des liens */
+.nav-link {
+    display: block;
+    text-align: center;
+    /* Centrer le texte des liens */
+    padding: 10px 0;
+    z-index: 1;         /* En dessous de l’icône */
+}
+
+
+
+
+
+
+  /* ✅ Hover effets spécifiques à chaque page */
+.page-acceuil:hover {
+  background: linear-gradient(135deg, #cce6ff, #a8c9ff);
+  color: white;
+}
+
+.page-cv:hover {
+  background: linear-gradient(135deg, #a8c9ff, #b9b3f8);
+  color: white;
+}
+
+.page-competences:hover {
+  background: linear-gradient(135deg, #b9b3f8, #d2a4f5);
+  color: white;
+}
+
+.page-veille:hover {
+  background: linear-gradient(135deg, #d2a4f5, #f0a3e5);
+  color: white;
+}
+
+.page-rapport:hover {
+  background: linear-gradient(135deg, #f0a3e5, #ffc8dd);
+  border-radius: 5px;
+  left: 9px;
+}
+
+.page-signale:hover {
+  background: linear-gradient(135deg, #ffc8dd, #cce6ff);
+  color: white;
+}
+
+/*--------------------------------------*/
+/*---------- MENU FOOTER ---------------*/
+/*--------------------------------------*/
+
+.footer {
+    background-color: #ffffff;
+    padding: 60px 0 10px 0; /* ↑ Haut 60px | ↓ Bas 40px */
+    border-top: 1px solid #eaeaea;
+    margin-top: 60px; /* Ajoute de l'espace entre le contenu et le footer */
+  }
+  
+  .footer-link {
+    color: #000;
+    font-size: 16px; /* Texte plus grand */
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  
+/* Affichage du menu déroulant au survol */
+.footer .dropup:hover .dropdown-menu {
+    display: block;
+    text-align: center;
+  }
+  
+  /* Assure la cohérence visuelle */
+  .footer .dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute; /* positionner le menu par rapport à son conteneur */
+    bottom: 100%; /* Fait en sorte que le menu se place au-dessus du lien */
+    left: 0;
+    right: 0;
+    display: none; /* Caché par défaut, il sera montré via hover */
+  }
+  
+  /* Styliser les éléments du menu déroulant */
+  .footer .dropdown-item {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  /* Change la couleur de fond lorsque survolé */
+  .footer .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .footer .dropdown-item:active,
+  .footer .dropdown-item.active {
+    background-color: #0d6efd;  /* Bleu Bootstrap */
+    color: white;
+  }
+
+  /* Désactiver les clics sur le lien */
+  .disabled-dropdown {
+    pointer-events: none;
+  }
+  
+  /* Lien centré tout en bas */
+  .footer-signal-link {
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+  }
+  
+  .footer-signal-link:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  /* Petit texte en bas à gauche */
+.footer-small-text {
+  font-size: 10px;
+  color: #888;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+/* Responsivité : Pour s'assurer que le texte reste en bas à gauche sur des petits écrans */
+@media (max-width: 768px) {
+  .footer-small-text {
+    font-size: 10px;  /* Plus petit sur les petits écrans */
+    left: 15px;  /* Réduit l'espacement à gauche */
+  }
+}
+
+/*--------------------------------------*/
+/*---------- BODY ACCEUIL --------------*/
+/*--------------------------------------*/
+
+.titre {
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.titre2 {
+  font-size: 30px;
+  font-weight: normal;
+  color: #ffffff;
+
+}
+
+.texte-bg-flou {
+  display: inline-block;
+  margin: 10px 0;   
+  padding: 0px 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+  background-color: rgba(255, 255, 255, 0.1); /* léger blanc transparent */
+}
+
+.bloc-center {
+  text-align: center; /* centre tout ce qui est inline(-block) à l’intérieur */
+  padding-bottom: 50px;
+}
+
+
+  .contenu-flex {
+    display: flex;
+    min-height: 50vh;
+    width: 100%;
+  }
+  
+  .bloc-texte-fond-blanc {
+    flex: 2;
+    background-color: rgba(255, 255, 255, 0.7); /* Fond blanc transparent */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .bloc-image {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .bloc-image img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
   }
